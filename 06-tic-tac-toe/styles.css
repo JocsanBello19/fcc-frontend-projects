@@ -1,0 +1,182 @@
+@charset "UTF-8";
+/* --- Variables de Colores Divertidos --- */
+:root {
+  --bg-color: #FFD93D;
+  /* Amarillo patito */
+  --board-bg: #FFFFFF;
+  /* Blanco */
+  --square-bg: #F8F9FA;
+  /* Gris muy claro */
+  --primary: #FF6B6B;
+  /* Rojo suave (X) */
+  --secondary: #4ECDC4;
+  /* Turquesa (O) */
+  --dark: #292F36;
+  /* Negro suave */
+  --shadow: 0 8px 0 rgba(0,0,0,0.15);
+  --shadow-active: 0 4px 0 rgba(0,0,0,0.15);
+}
+
+body {
+  /* Degradado con 4 colores */
+  background: linear-gradient(-45deg, #FFD93D, #FF6B6B, #4ECDC4, #6c5ce7);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  /* Configuraciones básicas */
+  font-family: "Varela Round", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+/* Agrega esto al final de tu CSS para que se mueva */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* Tarjeta del Juego */
+.game-container {
+  background: var(--board-bg);
+  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  border: 4px solid var(--dark);
+}
+
+/* Título */
+h1 {
+  font-family: "Fredoka One", cursive;
+  color: var(--dark);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Estado del Juego */
+.status {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  padding: 10px;
+  border-radius: 12px;
+  background: #eee;
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.status.winner {
+  background: #FFE66D;
+  color: #d35400;
+  animation: pop 0.5s ease;
+}
+
+/* --- TABLERO (Requisito: Grid 3x3) --- */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 columnas iguales */
+  gap: 10px;
+  margin-bottom: 2rem;
+  background: var(--dark);
+  padding: 10px;
+  border-radius: 15px;
+}
+
+/* --- BOTONES (Cuadrados) --- */
+.square {
+  background: var(--square-bg);
+  border: none;
+  border-radius: 10px;
+  height: 90px;
+  /* Altura fija */
+  width: 100%;
+  font-family: "Fredoka One", cursive;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.1);
+  /* Centrado del texto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+.square.x {
+  color: var(--primary);
+}
+
+.square.o {
+  color: var(--secondary);
+}
+
+/* Estilo cuando el cuadrado ya fue presionado (deshabilitado visualmente) */
+.square:disabled {
+  cursor: default;
+  transform: none;
+}
+
+/* --- BOTÓN DE REINICIO --- */
+#reset {
+  background: var(--dark);
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-family: "Fredoka One", cursive;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 #000;
+  transition: all 0.1s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#reset:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 #000;
+}
+
+#reset:hover {
+  background: #3e4444;
+}
+
+/* Animación de victoria */
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* Responsividad para móviles pequeños */
+@media (max-width: 400px) {
+  .square {
+    height: 70px;
+    font-size: 2.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
