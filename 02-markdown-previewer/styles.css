@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Roboto:wght@300;400;700&display=swap');
+
+/* --- ESTILO GENERAL --- */
+body {
+  background-color: #0d1117;
+  background-image: radial-gradient(#150458 1px, transparent 1px);
+  background-size: 20px 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #c9d1d9;
+}
+
+.app-container {
+  padding: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.main-title {
+  color: #ffd43b;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 212, 59, 0.3);
+}
+
+.main-title span {
+  color: white;
+  font-weight: 300;
+}
+
+.window-box {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+  overflow: hidden;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.toolbar {
+  background-color: #0d1117;
+  padding: 10px 15px;
+  border-bottom: 1px solid #30363d;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  color: #58a6ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: lowercase;
+}
+
+.toolbar i { margin-right: 8px; }
+
+/* --- EDITOR (COLOR CAMBIADO AQUÍ) --- */
+#editor {
+  flex-grow: 1;
+  width: 100%;
+  border: none;
+  padding: 20px;
+  /* CAMBIO: Un gris azulado más claro para diferenciarlo del fondo */
+  background-color: #1f2937; 
+  color: #e6edf3;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  resize: none;
+  outline: none;
+  line-height: 1.6;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5); /* Sombra interna para profundidad */
+}
+
+/* --- PREVIEW --- */
+#preview {
+  flex-grow: 1;
+  padding: 25px;
+  background-color: #ffffff;
+  color: #24292f;
+  overflow-y: auto;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+}
+
+#preview h1 { border-bottom: 3px solid #150458; padding-bottom: 10px; color: #150458; }
+#preview h2 { color: #e67e22; margin-top: 25px; border-bottom: 1px solid #eee; }
+#preview h3 { color: #2980b9; margin-top: 20px; }
+
+#preview pre {
+  background-color: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 15px;
+  border-radius: 6px;
+  margin: 15px 0;
+}
+#preview code {
+  font-family: 'Fira Code', monospace;
+  background-color: rgba(27,31,35,0.05);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 85%;
+}
+
+#preview blockquote {
+  border-left: 5px solid #ffd43b;
+  background-color: #fffbea;
+  padding: 10px 20px;
+  margin: 20px 0;
+  color: #57606a;
+  font-style: italic;
+}
+
+#preview ul { list-style-type: square; color: #150458; }
+#preview ol { color: #d35400; font-weight: bold; }
+#preview li { margin-bottom: 5px; color: #333; font-weight: normal; }
+
+#preview del {
+  color: #e74c3c;
+  text-decoration-thickness: 2px;
+  background-color: rgba(231, 76, 60, 0.1);
+  padding: 0 4px;
+}
+
+#preview table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+#preview th { background-color: #150458; color: white; padding: 10px; }
+#preview td { border: 1px solid #ddd; padding: 8px; }
+#preview img { max-width: 200px; display: block; margin: 10px auto; } /* Ajusté un poco el tamaño de img */
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #0d1117; }
+::-webkit-scrollbar-thumb { background: #30363d; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #58a6ff; }
