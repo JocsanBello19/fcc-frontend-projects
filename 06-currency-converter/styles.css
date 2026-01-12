@@ -1,0 +1,115 @@
+/* --- Variables de Lujo --- */
+body {
+  background-color: #0f172a;
+  background-image: radial-gradient(circle at 50% 50%, #1e293b 0%, #0f172a 100%);
+  color: #f8fafc;
+  font-family: "Lato", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.luxury-card {
+  background: rgba(30, 41, 59, 0.75);
+  backdrop-filter: blur(15px);
+  /* Efecto cristal */
+  border: 1px solid #d4af37;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.15), inset 0 0 40px rgba(0, 0, 0, 0.5);
+  padding: 3rem 2rem;
+  width: 100%;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+}
+.luxury-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
+h2 {
+  font-family: "Cinzel", serif;
+  color: #d4af37;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.form-label {
+  color: #f3e5ab;
+  font-family: "Cinzel", serif;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.input-group-luxury {
+  margin-bottom: 1.5rem;
+}
+
+.custom-control {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid #475569;
+  color: white;
+  border-radius: 4px;
+  padding: 12px 15px;
+  width: 100%;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+.custom-control:focus {
+  background: #0f172a;
+  border-color: #d4af37;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+  outline: none;
+}
+
+select.custom-control {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23d4af37'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2em;
+}
+
+.result-box {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(15, 23, 42, 0.6));
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  padding: 2rem;
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.result-box .result-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.result-box .result-amount {
+  font-family: "Cinzel", serif;
+  font-size: 2.5rem;
+  color: #d4af37;
+  font-weight: 700;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+}
+
+.market-info {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.7rem;
+  color: #475569;
+  letter-spacing: 1px;
+}
