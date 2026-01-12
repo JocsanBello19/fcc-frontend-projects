@@ -1,0 +1,104 @@
+@charset "UTF-8";
+/* --- 1. RESET GLOBAL --- */
+* {
+  box-sizing: border-box;
+  /* Vital para que los bordes gruesos no rompan el diseño */
+  margin: 0;
+  padding: 0;
+}
+
+/* --- 2. CUERPO --- */
+body {
+  background-color: #7a201b;
+  color: #333;
+  font-family: "Merriweather", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  transition: background-color 1s ease;
+}
+
+/* --- 3. CONTENEDOR REACT --- */
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- 4. TÍTULO --- */
+.main-title {
+  text-align: center;
+  margin-bottom: 25px;
+  font-family: "Cinzel", serif;
+  font-size: 1.8rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* --- 5. CAJA DE CITAS (BORDE DORADO GRUESO) --- */
+#quote-box {
+  background-color: #fdfbf7;
+  border-radius: 5px;
+  padding: 40px;
+  width: 550px;
+  max-width: 90vw;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  /* --- CAMBIO AQUÍ: Borde mucho más grueso (8px) --- */
+  border: 8px solid #d4af37;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+#text {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+  transition: color 1s ease, opacity 0.5s ease;
+}
+
+#author {
+  text-align: right;
+  font-style: italic;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  transition: color 1s ease, opacity 0.5s ease;
+}
+
+/* --- 6. BOTONES (BORDE PLATEADO GRUESO) --- */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.button {
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  /* --- CAMBIO AQUÍ: Borde más grueso (5px) --- */
+  border: 5px solid #e0e0e0;
+  transition: background-color 1s ease, opacity 0.3s, border-color 0.3s;
+}
+
+.button:hover {
+  opacity: 0.9;
+  border-color: white;
+}
+
+/* --- 7. FIRMA --- */
+.author-credit {
+  margin-top: 20px;
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
+  opacity: 0.8;
+}
