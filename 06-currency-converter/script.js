@@ -139,7 +139,7 @@ const ConverterLogic = () => {
   );
 };
 
-/* --- 4. EXPORTACIÓN MANUAL PARA CODEPEN --- */
+/* --- 4. EXPORTACIÓN MANUAL PARA NAVEGADOR --- */
 
 // Componente Principal
 const CurrencyConverter = () => {
@@ -150,9 +150,6 @@ const CurrencyConverter = () => {
   );
 };
 
-// IMPORTANTE: En lugar de 'export', asignamos a window para que las pruebas lo encuentren
-window.CurrencyConverter = CurrencyConverter;
-
-// Renderizado en el DOM
+// Renderizado en el DOM (React 18)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<CurrencyConverter />);
