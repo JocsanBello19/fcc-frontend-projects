@@ -1,0 +1,185 @@
+@charset "UTF-8";
+/* Variables de Diseño Boutique */
+/* Crema suave */
+/* Café elegante */
+/* Dorado antiguo */
+body {
+  background-color: #FFF8E7;
+  color: #4A403A;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.boutique-clock {
+  background-color: #FFFFFF;
+  border: 4px solid #C5A059;
+  border-radius: 30px;
+  padding: 40px;
+  width: 480px;
+  box-shadow: 0 20px 40px rgba(74, 64, 58, 0.15);
+  text-align: center;
+  position: relative;
+  /* Detalle decorativo superior */
+}
+.boutique-clock::before {
+  content: "Maison du Temps";
+  font-family: "Playfair Display", serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: #C5A059;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.main-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 10px 0 30px 0;
+  color: #4A403A;
+}
+
+.controls-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.control-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.control-box h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: #75655c;
+}
+.control-box .actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.control-box .actions button {
+  background: white;
+  border: 2px solid #C5A059;
+  color: #4A403A;
+  width: 45px;
+  /* Un poco más ancho para los símbolos */
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Estilos específicos para el texto + y - */
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-family: "Lato", sans-serif;
+  padding-bottom: 4px;
+  /* Ajuste visual vertical */
+}
+.control-box .actions button:hover {
+  background: #C5A059;
+  color: white;
+  transform: translateY(-2px);
+}
+.control-box .actions button:active {
+  transform: scale(0.95);
+}
+.control-box .actions span {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+  min-width: 40px;
+}
+
+.timer-display {
+  border: 3px solid #C5A059;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 0 auto 30px auto;
+  background: linear-gradient(135deg, #fff, #f9f9f9);
+  width: 80%;
+  position: relative;
+  overflow: hidden;
+  /* Clase dinámica para cuando queda poco tiempo */
+}
+.timer-display #timer-label {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: #C5A059;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.timer-display #time-left {
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #4A403A;
+}
+.timer-display.active-red {
+  border-color: #D9534F;
+}
+.timer-display.active-red #time-left, .timer-display.active-red #timer-label {
+  color: #D9534F;
+}
+
+.main-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.main-controls button {
+  border: none;
+  padding: 12px 35px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.main-controls button#start_stop {
+  background-color: #4A403A;
+  color: #C5A059;
+}
+.main-controls button#start_stop:hover {
+  background-color: #675950;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.main-controls button#reset {
+  background-color: transparent;
+  border: 2px solid #D9534F;
+  color: #D9534F;
+}
+.main-controls button#reset:hover {
+  background-color: #D9534F;
+  color: white;
+}
+
+.signature {
+  margin-top: 25px;
+  font-size: 0.85rem;
+  font-style: italic;
+  opacity: 0.6;
+  font-family: "Playfair Display", serif;
+}
