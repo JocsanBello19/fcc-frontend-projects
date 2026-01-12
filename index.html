@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Frontend | Jocsan Bello</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background: #f0f2f5; margin: 0; padding: 20px; text-align: center; }
+        h1 { color: #2c3e50; margin-bottom: 10px; }
+        p { color: #7f8c8d; margin-bottom: 40px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; }
+        
+        .card {
+            background: white; border-radius: 15px; padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s;
+            text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        .icon-box {
+            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 24px; color: white; margin-bottom: 15px;
+        }
+        h2 { font-size: 1.2rem; margin: 0; color: #34495e; }
+        span { font-size: 0.9rem; color: #bdc3c7; margin-top: 5px; }
+
+        /* Colores específicos para cada tarjeta */
+        .c-quote { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .c-markdown { background: linear-gradient(135deg, #2af598 0%, #009efd 100%); }
+        .c-drum { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%); }
+        .c-calc { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .c-clock { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .c-tictac { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+        .c-currency { background: linear-gradient(135deg, #8baaaa 0%, #ae8b9c 100%); }
+    </style>
+</head>
+<body>
+
+    <h1>Mi Portafolio Frontend</h1>
+    <p>Certificación FreeCodeCamp & Proyectos Personales</p>
+
+    <div class="grid">
+        <a href="01-quote-machine/index.html" class="card">
+            <div class="icon-box c-quote"><i class="fas fa-quote-right"></i></div>
+            <h2>Máquina de Citas</h2>
+            <span>Random Quote Machine</span>
+        </a>
+
+        <a href="02-markdown-previewer/index.html" class="card">
+            <div class="icon-box c-markdown"><i class="fab fa-markdown"></i></div>
+            <h2>Visor Markdown</h2>
+            <span>Markdown Previewer</span>
+        </a>
+
+        <a href="03-drum-machine/index.html" class="card">
+            <div class="icon-box c-drum"><i class="fas fa-drum"></i></div>
+            <h2>Caja de Ritmos</h2>
+            <span>Drum Machine</span>
+        </a>
+
+        <a href="04-calculator/index.html" class="card">
+            <div class="icon-box c-calc"><i class="fas fa-calculator"></i></div>
+            <h2>Calculadora</h2>
+            <span>React Calculator</span>
+        </a>
+
+        <a href="05-clock/index.html" class="card">
+            <div class="icon-box c-clock"><i class="far fa-clock"></i></div>
+            <h2>Reloj 25 + 5</h2>
+            <span>Pomodoro Clock</span>
+        </a>
+
+        <a href="06-tic-tac-toe/index.html" class="card">
+            <div class="icon-box c-tictac"><i class="fas fa-gamepad"></i></div>
+            <h2>Tic-Tac-Toe</h2>
+            <span>Juego Tres en Raya</span>
+        </a>
+
+        <a href="07-currency-converter/index.html" class="card">
+            <div class="icon-box c-currency"><i class="fas fa-money-bill-wave"></i></div>
+            <h2>Conversor Divisas</h2>
+            <span>Currency Converter</span>
+        </a>
+    </div>
+
+</body>
+</html>
