@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Frontend | Jocsan Bello</title>
+    <title>Frontend Portfolio | Jocsan Bello</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         /* --- DEFINICIÓN DE COLORES POR TARJETA (Variables CSS) --- */
-        /* Definimos el color principal y secundario para cada tipo de tarjeta */
         .c-quote { --theme-primary: #667eea; --theme-secondary: #764ba2; }
         .c-markdown { --theme-primary: #2af598; --theme-secondary: #009efd; }
         .c-drum { --theme-primary: #ff9a9e; --theme-secondary: #fecfef; }
@@ -32,16 +31,56 @@
             padding: 40px 20px;
             text-align: center;
             color: #fff;
-            background: linear-gradient(-45deg, #1a2a6c, #b21f1f, #fdbb2d, #141E30);
+            /* Degradado elegante y oscuro para resaltar el dorado */
+            background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #141E30);
             background-size: 400% 400%;
             animation: gradientBG 15s ease infinite;
             min-height: 100vh;
         }
 
-        header { margin-bottom: 50px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-        h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
-        p.subtitle { opacity: 0.9; font-weight: 300; font-size: 1.1rem; margin-top: 10px; }
+        /* --- EFECTO DE TEXTO DORADO (LUJO) --- */
+        @keyframes shineText {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
 
+        .luxury-text {
+            /* Degradado complejo simulando oro metálico */
+            background: linear-gradient(
+                to right, 
+                #BF953F, 
+                #FCF6BA, 
+                #B38728, 
+                #FBF5B7, 
+                #AA771C
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: shineText 4s linear infinite; /* El brillo se mueve */
+            filter: drop-shadow(0 2px 0px rgba(0,0,0,0.3)); /* Sombra para legibilidad */
+        }
+
+        header { margin-bottom: 60px; }
+        
+        h1 { 
+            margin: 0; 
+            font-size: 3rem; 
+            letter-spacing: 2px; 
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        
+        p.subtitle { 
+            margin-top: 10px; 
+            font-size: 1.2rem; 
+            font-weight: 500;
+            letter-spacing: 1px;
+            opacity: 0.95;
+        }
+
+        /* --- GRID DE TARJETAS --- */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -50,9 +89,9 @@
             margin: 0 auto;
         }
         
-        /* --- ESTILO PRINCIPAL DE LA TARJETA --- */
+        /* --- ESTILO DE TARJETA --- */
         .card {
-            background: rgba(255, 255, 255, 0.95); /* Fondo base casi blanco */
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             padding: 30px 20px;
             text-decoration: none;
@@ -60,56 +99,46 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* Borde grueso transparente por defecto */
             border: 3px solid transparent; 
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             position: relative;
-            overflow: hidden; /* Necesario para el efecto de brillo */
+            overflow: hidden; 
             z-index: 1;
         }
 
-        /* --- EFECTO "SHINE" (BRILLO) --- */
-        /* Creamos una capa de luz que cruzará la tarjeta */
+        /* Efecto de luz pasante */
         .card::before {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%; /* Empieza fuera a la izquierda */
+            left: -100%;
             width: 100%;
             height: 100%;
             background: linear-gradient(
                 120deg, 
                 transparent, 
-                rgba(255, 255, 255, 0.6), /* Color del brillo */
+                rgba(255, 255, 255, 0.6), 
                 transparent
             );
-            transition: all 0.7s; /* Velocidad del paso de luz */
-            z-index: -1; /* Detrás del contenido */
+            transition: all 0.7s;
+            z-index: -1;
         }
 
-        /* --- ESTADOS HOVER (AL PASAR EL MOUSE) --- */
+        /* --- ESTADOS HOVER --- */
         .card:hover {
-            transform: translateY(-10px); /* Se eleva */
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4); /* Sombra grande */
-            
-            /* 1. Borde grueso del color del tema */
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
             border-color: var(--theme-primary); 
-            
-            /* 2. El fondo se tiñe ligeramente del color del tema */
-            /* Usamos un truco moderno para mezclar blanco con un 10% del color del tema */
             background: color-mix(in srgb, var(--theme-primary) 10%, white 90%);
         }
 
-        /* Disparar el efecto de brillo al hacer hover */
         .card:hover::before {
-            left: 100%; /* Se mueve hacia la derecha */
+            left: 100%;
         }
 
-        /* Estado Active (Al hacer clic) */
         .card:active {
             transform: scale(0.98) translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            transition: 0.1s;
         }
 
         /* ICONOS */
@@ -124,77 +153,85 @@
             color: white;
             margin-bottom: 20px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            /* Usamos las variables para el gradiente del icono */
             background: linear-gradient(135deg, var(--theme-primary) 0%, var(--theme-secondary) 100%);
         }
 
         h2 { font-size: 1.4rem; margin: 0; color: #2c3e50; font-weight: 700; }
         span { font-size: 0.9rem; color: #666; margin-top: 5px; font-weight: 500; }
 
+        /* FOOTER SIMPLIFICADO */
         footer {
-            margin-top: 60px;
-            color: rgba(255,255,255,0.8);
-            font-size: 1rem;
+            margin-top: 80px;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            font-weight: 300;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-transform: uppercase;
+        }
+        
+        footer strong {
+            color: #FCF6BA; /* Un toque sutil de dorado en el nombre del footer */
             font-weight: 500;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Mi Portafolio Frontend</h1>
-        <p class="subtitle">Certificación FreeCodeCamp & Proyectos Personales</p>
+        <h1 class="luxury-text">Frontend Portfolio</h1>
+        <p class="subtitle luxury-text">FreeCodeCamp Certification & Personal Projects</p>
     </header>
 
     <div class="grid">
         
         <a href="01-quote-generator/index.html" class="card c-quote">
             <div class="icon-box"><i class="fas fa-quote-right"></i></div>
-            <h2>Máquina de Citas</h2>
-            <span>Random Quote Machine</span>
+            <h2>Random Quote Machine</h2>
+            <span>React App</span>
         </a>
 
         <a href="02-markdown-previewer/index.html" class="card c-markdown">
             <div class="icon-box"><i class="fab fa-markdown"></i></div>
-            <h2>Visor Markdown</h2>
-            <span>Markdown Previewer</span>
+            <h2>Markdown Previewer</h2>
+            <span>React App</span>
         </a>
 
         <a href="03-drum-machine/index.html" class="card c-drum">
             <div class="icon-box"><i class="fas fa-drum"></i></div>
-            <h2>Caja de Ritmos</h2>
-            <span>Drum Machine</span>
+            <h2>Drum Machine</h2>
+            <span>Audio & Keys</span>
         </a>
 
         <a href="04-calculator/index.html" class="card c-calc">
             <div class="icon-box"><i class="fas fa-calculator"></i></div>
-            <h2>Calculadora</h2>
-            <span>React Calculator</span>
+            <h2>React Calculator</h2>
+            <span>Mathematics Logic</span>
         </a>
 
         <a href="05-clock/index.html" class="card c-clock">
             <div class="icon-box"><i class="far fa-clock"></i></div>
-            <h2>Reloj 25 + 5</h2>
-            <span>Pomodoro Clock</span>
+            <h2>25 + 5 Clock</h2>
+            <span>Pomodoro Timer</span>
         </a>
 
         <a href="06-tic-tac-toe/index.html" class="card c-tictac">
             <div class="icon-box"><i class="fas fa-gamepad"></i></div>
             <h2>Tic-Tac-Toe</h2>
-            <span>Juego Tres en Raya</span>
+            <span>Gaming Logic</span>
         </a>
 
         <a href="07-currency-converter/index.html" class="card c-currency">
             <div class="icon-box"><i class="fas fa-money-bill-wave"></i></div>
-            <h2>Conversor Divisas</h2>
-            <span>Currency Converter</span>
+            <h2>Currency Converter</h2>
+            <span>Redux State Management</span>
         </a>
 
     </div>
 
     <footer>
-        <p>Desarrollado con <i class="fas fa-heart" style="color: #e74c3c;"></i> por <strong>Jocsan Bello</strong> &copy; 2025</p>
+        Designed by <strong>Jocsan Bello</strong> | Web Developer
     </footer>
 
 </body>
